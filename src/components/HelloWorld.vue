@@ -22,27 +22,7 @@
           <input v-model.number="depth" type="range" min="2" max="6" step="1" />
           {{ depth }}
         </div>
-
-        <div class="values">
-          <!-- <p>
-            {{ value.toFixed(2) }}
-          </p>
-          <p>
-            {{ binary }}
-          </p> -->
-          <h2>
-            {{ joinedValue }}
-          </h2>
-          <!-- <div class="result">
-            <span
-              v-for="(item, i) in computedValueList"
-              :key="i"
-              :style="getStyle(i)"
-            >
-              {{ item }}
-            </span>
-          </div> -->
-        </div>
+        <div class="result">「{{ joinedValue }}」</div>
       </label>
     </section>
   </div>
@@ -103,15 +83,6 @@ export default Vue.extend({
       }, '')
     },
   },
-  methods: {
-    getStyle(index: number): Record<string, string> {
-      const len = this.computedValueList.length
-
-      return {
-        fontSize: (16 * len) / (index + 1) + 'px',
-      }
-    },
-  },
 })
 </script>
 
@@ -119,21 +90,20 @@ export default Vue.extend({
 .value {
   width: 300px;
 }
-.range,
-.result {
+.range {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-// .result {
-//   p:nth-child(1) {
-//     font-size: 200%;
-//   }
-//   p:nth-child(2) {
-//     font-size: 150%;
-//   }
-// }
+.result {
+  font-size: 24px;
+  border: 1px solid #999;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 20px;
+}
+
 .values {
   display: flex;
   flex-direction: column;
