@@ -37,7 +37,7 @@ export default Vue.extend({
       value: 0,
       left: 'あり',
       right: '無し',
-      depth: 4,
+      depth: 3,
     }
   },
   computed: {
